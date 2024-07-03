@@ -4,7 +4,7 @@
   author: (
     firstname: "John",
     lastname: "Doe",
-    positions: ("Software Engineer", "DevOps Specialist"),
+    positions: ("software engineer", "devops specialist"),
     contact: (
       phone: "+1 123 456 7890",
       email: "john.doe@example.com",
@@ -22,7 +22,7 @@
         company: "Tech Corp",
         location: "New York, NY",
         title: "Senior Software Engineer",
-        duration: "2020 - Present",
+        duration: "July, 2020 - Present",
         work_summary: [
           - #lorem(10) *#lorem(5)* #lorem(10)
           - #lorem(15) *#lorem(5)* #lorem(15)
@@ -33,7 +33,7 @@
         company: "DC Corp",
         location: "Dallas, TX",
         title: "Senior Software Engineer",
-        duration: "2010 - 2020",
+        duration: "Jan, 2010 - June, 2020",
         work_summary: [
           - #lorem(15) *#lorem(5)* #lorem(15)
           - #lorem(10) *#lorem(5)* #lorem(10)
@@ -44,7 +44,7 @@
         company: "Avengers Corp",
         location: "New Jersey, NY",
         title: "Senior Software Engineer",
-        duration: "2000 - 2010",
+        duration: "Aug, 2000 - Dec, 2010",
         work_summary: [
           - #lorem(20) *#lorem(5)* #lorem(20)
           - #lorem(10) *#lorem(5)* #lorem(10)
@@ -64,7 +64,7 @@
       *Cloud:* AWS, Google Cloud Platform, Azure \
     ],
     education: [
-      *_Bachelor of Science in Computer Science_*, _University of Technology_ #h(1fr) _1995 - 2000_
+      *_Bachelor of Science in Computer Science_*, _University of Technology_ #h(1fr) _May, 1995 - July, 2000_
     ]
   )
 )
