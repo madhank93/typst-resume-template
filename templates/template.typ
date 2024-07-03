@@ -1,4 +1,7 @@
-#let font_color = rgb("#000000")
+// #let font_color = rgb("#2A2D31")
+#let font_color = rgb("#28282B")
+#let font_color_headings = rgb("#1B1212")
+
 
 // Utility functions
 #let justify_align(left_body, right_body) = {
@@ -9,7 +12,7 @@
 }
 
 #let title_section(title) = {
-  set text(size: 14pt, weight: "semibold")
+  set text(size: 14pt, weight: "semibold", fill: font_color_headings)
   align(left)[
     #smallcaps[#title]
     #line(length: 100%, stroke: (paint: gray, thickness: 1pt))
@@ -21,7 +24,7 @@
   align(center)[
     #pad(bottom: 5pt)[
       #block[
-        #set text(size: 25pt, style: "normal")
+        #set text(size: 25pt, style: "normal", fill: font_color_headings)
         #text(weight: "light")[#firstname]
         #text(weight: "light")[#lastname]
       ]
@@ -84,23 +87,25 @@
 #let work_experience_component(experience_details) = {
   for (_, work) in experience_details {
     pad[
-      #justify_align[
-        #set text(size: 12pt, style: "normal", weight: "bold")
-        #work.company
-      ][
-        #set text(size: 12pt, style: "normal", weight: "light")
-        #work.location
+      #if (work.company != "" and work.location != "") [
+        #justify_align[
+          #set text(size: 11pt, style: "normal", weight: "semibold", fill: font_color_headings)
+          #work.company
+        ][
+          #set text(size: 11pt, style: "normal", weight: "semibold", fill: font_color_headings)
+          #work.location
+        ]
       ]
       #justify_align[
-        #set text(size: 9pt, weight: "regular", ligatures: false)
-        #emph(work.title)
+        #set text(size: 9pt, style: "italic", weight: "semibold", fill: font_color_headings)
+        #work.title
       ][
-        #set text(size: 9pt, weight: "light", style: "normal")
+        #set text(size: 9pt, style: "normal", weight: "semibold", fill: font_color_headings)
         #work.duration
       ]
     ]
 
-    set text(size: 10pt, style: "normal", weight: "light")
+    set text(size: 10pt, style: "normal")
     set par(leading: 0.65em)
     work.work_summary
   }
@@ -111,6 +116,7 @@
   // Global settings
   set text(font: ("Roboto"), lang: "en", size: 10pt, fill: font_color, fallback: false)
   set page(paper: "a4", margin: (left: 0.30in, right: 0.30in, top: 0.20in, bottom: 0.20in))
+  set list(indent: 5pt)
   show par: set block(above: 0.75em, below: 0.75em)
   set par(justify: true)
   set heading(numbering: none, outlined: false)
